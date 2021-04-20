@@ -1,0 +1,64 @@
+// body
+$body-gr1: #fff;
+$body-gr2: #ddd;
+$admin-body-gradient-colors: $body-gr1 10%, $body-gr2 90%;
+$main-area-padding: 20px 20px 20px 0;
+$main-area-padding-mobile: 20px;
+
+// navigation
+$navigation-main-color: #01768f;
+$navigation-space: 20px;
+$navigation-width: 280px;
+$navigation-border-radius: 10px;
+$navigation-space-smaller: 14px;
+
+// tables
+$table-padding: 10px;
+$table-th-border: thin solid black;
+$table-td-border: thin solid #ccc;
+
+$primary-color: #01768f;
+$primary-color-opacity: rgba(1, 118, 143, 0.4);
+$secondary-color: #8F1041;
+$danger-color: #F73326;
+
+// override bootstrap variables
+$primary: $primary-color;
+
+$text-color: #111;
+$text-color-light: #EEE;
+
+$error-color: #F73326;
+$warning-color: #FAD831;
+$info-color: #A2B7FA;
+$success-color: #2CC91A;
+$default-color: #999;
+
+$g0: #EEE;
+$g0_5: #DDD;
+$g1: #CCC;
+$g2: #AAA;
+$g3: #888;
+$g4: #777;
+$g5: #555;
+$g6: #444;
+$g7: #333;
+$g8: #222;
+$g9: #111;
+
+$padding-sm: 5px;
+$padding-md: 10px;
+$padding-lg: 25px;
+$padding-xl: 45px;
+
+$margin-sm: 5px;
+$margin-md: 10px;
+$margin-lg: 25px;
+$margin-xl: 45px;
+
+$radius: 10px;
+$radius-xl: 20px;
+
+$font-weight-light: 300;
+$font-weight-medium: 500;
+$font-weight-bold: 700;

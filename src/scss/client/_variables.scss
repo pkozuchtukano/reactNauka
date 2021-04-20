@@ -1,0 +1,43 @@
+$primary-color: #1555A6;
+$secondary-color: #F7B915;
+$secondary-color-darken: #F48F1E;
+
+$text-color: #111;
+$text-color-light: #EEE;
+
+$error-color: #F73326;
+$warning-color: #FAD831;
+$info-color: #A2B7FA;
+$success-color: #2CC91A;
+$default-color: #999;
+
+$secondary-gradient-colors: $secondary-color 0%, $secondary-color-darken 100%;
+$tukano-gradient-colors: $secondary-color 50%, $primary-color 70%;
+
+$g0: #EEE;
+$g1: #CCC;
+$g2: #AAA;
+$g3: #888;
+$g4: #777;
+$g5: #555;
+$g6: #444;
+$g7: #333;
+$g8: #222;
+$g9: #111;
+
+$padding-sm: 5px;
+$padding-md: 10px;
+$padding-lg: 25px;
+$padding-xl: 45px;
+
+$margin-sm: 5px;
+$margin-md: 10px;
+$margin-lg: 25px;
+$margin-xl: 45px;
+
+$radius: 10px;
+$radius-xl: 20px;
+
+$font-weight-light: 300;
+$font-weight-medium: 500;
+$font-weight-bold: 700;

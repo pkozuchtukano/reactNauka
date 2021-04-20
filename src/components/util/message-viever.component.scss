@@ -1,0 +1,35 @@
+@import "../../scss/client/variables";
+@import "../../scss/client/mixins";
+
+.message-box {
+    width: 100%;
+    text-align: center;
+    border: none;
+    padding: $padding-md;
+    box-sizing: border-box;
+  
+    &--danger {
+      box-shadow: 0 0 2px 1px lighten($error-color, 20%);
+      color: $error-color;
+    }
+  
+    &--warning {
+      box-shadow: 0 0 2px 1px lighten($warning-color, 20%);
+      color: $warning-color;
+    }
+
+    &--info {
+      box-shadow: 0 0 2px 1px lighten($info-color, 20%);
+      color: $info-color;
+    }
+
+    &--success {
+      box-shadow: 0 0 2px 1px lighten($success-color, 20%);
+      color: $success-color;
+    }
+
+    &--default {
+      box-shadow: 0 0 2px 1px lighten($default-color, 20%);
+      color: $default-color;
+    }
+  }

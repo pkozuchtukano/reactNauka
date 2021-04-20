@@ -1,0 +1,98 @@
+@import "../../scss/admin/variables";
+@import "../../scss/admin/mixins";
+
+// override react datepicker styles
+.react-datepicker-wrapper {
+  width: 100%;
+
+  .react-datepicker__input-container {
+    width: 100%;
+
+    input {
+      @include animate();
+      outline: none;
+      padding: $padding-sm;
+      border: none;
+      border-bottom: thin solid $g1;
+      background-color: lighten($primary-color, 65%);
+      border-radius: $radius;
+      width: 100%;
+      box-sizing: border-box;
+
+      &:focus {
+        box-shadow: 0 0 0px 4px $primary-color-opacity;
+        border: thin solid $primary-color;
+      }
+    }
+  }
+}
+
+// override alertify styles
+.ajs-dialog {
+  background-color: transparent !important;
+
+  .ajs-header {
+    border: none !important;
+    background-color: $g0 !important;
+    border-top-left-radius: $radius-xl !important;
+    border-top-right-radius: $radius-xl !important;
+  }
+
+  .ajs-body {
+    background-color: white !important;
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+
+  .ajs-footer {
+    border: none !important;
+    background-color: white !important;
+    border-bottom-left-radius: $radius-xl !important;
+    border-bottom-right-radius: $radius-xl !important;
+  }
+
+  .ajs-button {
+    &.ajs-ok,
+    &.ajs-cancel {
+      @include animate();
+      @include lightBottomShadow();
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      box-sizing: border-box;
+      display: inline-block;
+      border: none;
+      text-align: center;
+      background-color: $g0;
+      color: $primary-color;
+
+      &:hover {
+        background-color: $g0_5;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: lighten($primary-color, 65%);
+      }
+
+      &:disabled {
+        background-color: white;
+        color: $g2;
+        cursor: not-allowed;
+      }
+    }
+
+    &.ajs-ok {
+      color: $primary-color !important;
+    }
+
+    &.ajs-cancel {
+      color: $g5 !important;
+    }
+  }
+}
+
+.ajs-modal,
+.ajs-dimmer {
+  z-index: 20000000 !important;
+}

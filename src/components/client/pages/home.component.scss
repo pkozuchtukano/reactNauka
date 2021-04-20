@@ -1,0 +1,13 @@
+@import "../../../scss/client/variables";
+@import "../../../scss/client/mixins";
+
+.home-page {
+  &__title {
+      @include gradient(to bottom, $tukano-gradient-colors);
+      margin: $margin-xl 0;
+      text-align: center;
+      font-size: 108px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+}

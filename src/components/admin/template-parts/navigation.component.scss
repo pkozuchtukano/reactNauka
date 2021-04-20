@@ -1,0 +1,144 @@
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+@import "../../../scss/admin/variables";
+@import "../../../scss/admin/mixins";
+
+.admin-navigation {
+  position: absolute;
+  z-index: 1000000;
+  left: $navigation-space;
+  top: $navigation-space;
+  width: $navigation-width;
+  background-color: $navigation-main-color;
+  border-radius: $navigation-border-radius;
+  @include lightShadow();
+
+  @include hideMenu() {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  &__title {
+    padding: $navigation-space;
+    text-align: center;
+    text-transform: uppercase;
+    color: color-contrast($navigation-main-color);
+  }
+
+  &__divider {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    height: 1px;
+    background-color: darken($navigation-main-color, 5%);
+  }
+
+  &__link {
+    @include animate();
+    display: flex;
+    text-decoration: none;
+    padding: $navigation-space-smaller $navigation-space;
+    color: color-contrast($navigation-main-color);
+
+    @include hideMenu() {
+      display: block;
+      text-align: center;
+    }
+
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      @include hideMenu() {
+        transform: scale(1.5);
+      }
+    }
+
+    &--selected {
+      background-color: white;
+      color: $navigation-main-color;
+
+      &:hover {
+        background-color: white;
+        color: $navigation-main-color;
+      }
+    }
+  }
+
+  &__link-text {
+    margin-left: $navigation-space-smaller;
+  }
+
+  &__footer {
+    padding: $navigation-space;
+    text-align: center;
+    color: color-contrast($navigation-main-color);
+    font-size: small;
+  }
+
+  &__mobile-button-show {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    z-index: 900000;
+    @include animate();
+    @include lightShadow();
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    line-height: 32px;
+    box-sizing: border-box;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    background-color: $primary-color;
+    color: $white;
+    transform: scale(2);
+
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: lighten($primary-color, 20%);
+      @include lightShadow();
+    }
+  }
+
+  &__mobile-button-hide {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    z-index: 1100000;
+    @include animate();
+    @include lightShadow();
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    line-height: 32px;
+    box-sizing: border-box;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    background-color: white;
+    color: $primary-color;
+    transform: scale(2);
+
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: lighten($primary-color, 20%);
+      @include lightShadow();
+    }
+  }
+}

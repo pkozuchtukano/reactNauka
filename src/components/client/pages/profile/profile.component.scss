@@ -1,0 +1,18 @@
+@import "../../../../scss/client/variables";
+@import "../../../../scss/client/mixins";
+
+.profile-page {
+  &__title {
+    text-align: center;
+  }
+
+  &__roles-container {
+    text-align: center;
+    margin-bottom: $margin-md;
+  }
+
+  &__change-password-button-container {
+    text-align: center;
+    margin-bottom: $margin-xl;
+  }
+}

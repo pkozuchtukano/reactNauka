@@ -1,0 +1,73 @@
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+@import "../../../scss/admin/variables";
+@import "../../../scss/admin/mixins";
+
+.admin-user-container {
+  margin: $navigation-space-smaller 0;
+  text-align: center;
+
+  &__account-link {
+    display: inline-block;
+    color: lighten($navigation-main-color, 20%);
+    padding: 5px;
+  }
+
+  &__logout-link {
+    @include animate();
+    display: inline-block;
+    background-color: darken($navigation-main-color, 10%);
+    color: lighten($navigation-main-color, 20%);
+    border-radius: 10px;
+    margin-top: 4px;
+    padding: 3px 12px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__avatar {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    margin: 0 auto;
+    background-color: darken($navigation-main-color, 15%);
+    @include lightShadow();
+    border: 8px solid darken($navigation-main-color, 10%);
+    overflow: hidden;
+  }
+
+  &__avatar-first-letter {
+    @include animate();
+    display: inline-block;
+    font-size: 90px;
+    position: relative;
+    left: -5px;
+    top: -15px;
+    font-weight: bold;
+    transform: rotate(-10deg);
+    color: lighten($navigation-main-color, 10%);
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__avatar-second-letter {
+    @include animate();
+    display: inline-block;
+    font-size: 90px;
+    position: relative;
+    left: 20px;
+    top: -125px;
+    font-weight: bold;
+    transform: rotate(10deg);
+    color: lighten($navigation-main-color, 5%);
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

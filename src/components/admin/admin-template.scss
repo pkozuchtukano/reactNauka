@@ -1,0 +1,446 @@
+@import "../../scss/admin/variables";
+@import "../../scss/admin/mixins";
+@import "./admin-template-animations.scss";
+@import "./admin-template-override.scss";
+
+// bootstrap required
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// bootstrap used modules
+@import "../../../node_modules/bootstrap/scss/containers";
+@import "../../../node_modules/bootstrap/scss/grid";
+@import "../../../node_modules/bootstrap/scss/forms";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  @include gradient(to bottom left, $admin-body-gradient-colors);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0;
+}
+
+a {
+  @include animate();
+  text-decoration: none;
+  color: $primary-color;
+}
+
+table {
+  width: 100%;
+
+  th,
+  td {
+    padding: $table-padding;
+    text-align: left;
+  }
+
+  th {
+    border-bottom: $table-th-border;
+  }
+
+  td {
+    border-bottom: $table-td-border;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+  font-weight: $font-weight-medium;
+}
+
+.admin-panel {
+  &__body {
+    @include hideMenu() {
+      margin-left: initial;
+      padding: $main-area-padding-mobile;
+    }
+
+    margin-left: $navigation-width + $navigation-space * 2;
+    padding: $main-area-padding;
+  }
+}
+
+.mr-md {
+  margin-right: $margin-md;
+}
+
+.mt-md {
+  margin-top: $margin-md;
+}
+
+.mt-lg {
+  margin-top: $margin-lg;
+}
+
+.mt-xl {
+  margin-top: $margin-xl;
+}
+
+.link-btn {
+  @include animate();
+  text-decoration: none;
+  color: $primary-color;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display: inline-block;
+  padding: 0;
+
+  &:hover {
+    color: lighten($primary-color, 20%);
+    transform: scale(1.2);
+  }
+
+  &--danger {
+    color: $danger-color;
+
+    &:hover {
+      color: lighten($danger-color, 20%);
+    }
+  }
+}
+
+.admin-card {
+  @include lightBottomShadow();
+  padding: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.admin-filter-form {
+  &__group {
+    margin-top: $margin-sm;
+
+    &--error {
+      -webkit-animation: error-attention 0.8s both;
+      animation: error-attention 0.8s both;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-weight: $font-weight-light;
+    font-size: small;
+
+    &--error {
+      color: $error-color;
+    }
+  }
+
+  &__input {
+    @include animate();
+    outline: none;
+    padding: $padding-sm;
+    border: none;
+    border-bottom: thin solid $g1;
+    background-color: lighten($primary-color, 65%);
+    border-radius: $radius;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      box-shadow: 0 0 0px 4px $primary-color-opacity;
+      border: thin solid $primary-color;
+    }
+  }
+
+  &__error {
+    font-size: 0.8rem;
+    color: $error-color;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.admin-form {
+  &__group {
+    margin-top: $margin-sm;
+
+    &--error {
+      -webkit-animation: error-attention 0.8s both;
+      animation: error-attention 0.8s both;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-weight: $font-weight-light;
+
+    &--error {
+      color: $error-color;
+    }
+  }
+
+  &__input {
+    @include animate();
+    outline: none;
+    padding: $padding-md;
+    border: thin solid $g1;
+    border-radius: $radius;
+    width: 100%;
+    box-sizing: content-box;
+
+    &:focus {
+      box-shadow: 0 0 0px 5px $primary-color-opacity;
+      border: thin solid $primary-color;
+    }
+  }
+
+  &__error {
+    font-size: 0.8rem;
+    color: $error-color;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.filter-header {
+  color: $g3;
+}
+
+.filter-reset-btn {
+  display: inline-block;
+  margin-left: $margin-md;
+  color: $primary-color;
+  outline: none;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    color: lighten($primary-color, 30%);
+  }
+}
+
+.page-header {
+  margin-top: 0;
+}
+
+.empty-table-record {
+  text-align: center;
+  color: $g4;
+}
+
+.navigation-section {
+  color: $g4;
+  margin-bottom: $margin-sm;
+
+  &__icon {
+    margin-right: 3px;
+  }
+
+  &__icon-divider {
+    margin: 0 7px;
+  }
+}
+
+.admin-button {
+  @include animate();
+  @include lightBottomShadow();
+  padding: $padding-md $padding-md * 3;
+  border-radius: $radius-xl;
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;
+  text-align: center;
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--main {
+    background-color: $secondary-color;
+    color: color-contrast($secondary-color);
+
+    &:hover {
+      background-color: lighten($secondary-color, 10%);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: lighten($secondary-color, 15%);
+      @include lightShadow();
+    }
+
+    &:disabled {
+      color: lighten($secondary-color, 10%);
+      background-color: $g3;
+    }
+  }
+
+  &--light {
+    background-color: $g0;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $g0_5;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: lighten($primary-color, 50%);
+      @include lightShadow();
+    }
+
+    &:disabled {
+      background-color: white;
+      color: $g2;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.admin-pagination {
+  text-align: right;
+  margin-top: $margin-sm;
+
+  &__btn {
+    @include animate();
+    @include lightBottomShadow();
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    background-color: $g0;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $g0_5;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: lighten($primary-color, 65%);
+      @include lightShadow();
+    }
+
+    &:disabled {
+      background-color: white;
+      color: $g2;
+      cursor: not-allowed;
+    }
+  }
+
+  &__current-position {
+    padding: 0 $padding-md;
+  }
+}
+
+.data-tile {
+  margin-top: $margin-lg;
+  padding: $padding-md;
+  background-color: $g0;
+  border-radius: $radius;
+
+  &__record {
+    display: table-row;
+  }
+
+  &__record-label {
+    display: table-cell;
+  }
+
+  &__record-value {
+    display: table-cell;
+    padding-left: $padding-md;
+    font-weight: $font-weight-bold;
+  }
+
+  &__actions {
+    text-align: right;
+  }
+
+  &__actions-btn {
+    @include animate();
+    @include lightBottomShadow();
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    line-height: 32px;
+    box-sizing: border-box;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    background-color: white;
+    color: $primary-color;
+
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: lighten($primary-color, 20%);
+      @include lightShadow();
+    }
+
+    &:disabled {
+      background-color: white;
+      color: $g2;
+      cursor: not-allowed;
+    }
+
+    &--danger {
+      color: $danger-color;
+
+      &:hover {
+        background-color: lighten($danger-color, 10%);
+        color: white;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: lighten($danger-color, 20%);
+        @include lightShadow();
+      }
+    }
+  }
+}
+
+.details-group {
+  margin-top: $margin-lg;
+
+  &__header {
+    font-size: x-large;
+    color: $g7;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.details-box {
+  margin-top: $margin-md;
+  display: block;
+  &__label {
+    color: $g2;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  &__value {
+    color: $g9;
+  }
+}
+
+.text-danger {
+  color: $danger-color;
+}
