@@ -24,14 +24,6 @@ export default function ClientTemplate(props: IClientTemplateProps) {
         <UserPanelTemplatePart />
       </nav>
       <header>
-        <div className="client-template__avatar">
-          <Link to="/">
-            <img src={tukanIcon} alt="icon" />
-          </Link>
-        </div>
-        {props.header || (
-          <h1 className="client-template__header">Tukano Boilerplate</h1>
-        )}
       </header>
       <TableWrapper></TableWrapper>
       <main>{props.children}</main>

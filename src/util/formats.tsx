@@ -6,8 +6,8 @@ export const PASSWORD_MSG: string = "Hasło musi zawierać 6 znaków w tym jedn�
 export const SERVER_DATE_FORMAT: string = "dd-MM-yyyy";
 export const SERVER_DATE_TIME_FORMAT: string = "dd-MM-yyyy HH:mm";
 
-export const APP_DATE_FORMAT: string = "dd-MM-yyyy";
-export const APP_DATE_TIME_FORMAT: string = "dd-MM-yyyy HH:mm";
+export const APP_DATE_FORMAT: string = "yyyy-MM-dd";
+export const APP_DATE_TIME_FORMAT: string = "yyyy-MM-dd HH:mm";
 
 export function formatServerDate(input: Date | null | undefined): string {
   return !input ? "" : format(input, SERVER_DATE_FORMAT);
