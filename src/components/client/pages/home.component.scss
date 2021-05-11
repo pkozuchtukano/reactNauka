@@ -11,3 +11,37 @@
       -webkit-text-fill-color: transparent;
   }
 }
+
+// global
+  .attention {
+    background-color: $error-color;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+//table
+table {
+  thead{
+    background-color: $secondary;
+  }
+
+  tbody {
+  tr {
+    border: 1px solid $primary-color;
+
+    td {
+      padding: 5px;
+    }
+
+  }
+  }
+}
+
+
+  .table-stripped {
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  }
